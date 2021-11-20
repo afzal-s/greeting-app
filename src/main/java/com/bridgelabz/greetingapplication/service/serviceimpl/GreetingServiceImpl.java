@@ -1,6 +1,7 @@
 package com.bridgelabz.greetingapplication.service.serviceimpl;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +40,14 @@ public class GreetingServiceImpl implements IGreetingService {
 	@Override
 	public void deleteGreetingById(long id) {
 		greetingRepository.deleteById(id);
+	}
+
+	@Override
+	public void updateGreetingById(Greeting greeting, long id) {
+		Optional<Greeting> findById = greetingRepository.findById(id);
+		if (findById.isPresent()) {
+			greetingRepository.save(greeting);
+		}
 	}
 
 	
