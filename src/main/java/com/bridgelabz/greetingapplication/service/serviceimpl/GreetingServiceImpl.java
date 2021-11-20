@@ -36,6 +36,11 @@ public class GreetingServiceImpl implements IGreetingService {
 		return greetingRepository.findAll();
 	}
 
+	@Override
+	public void deleteGreetingById(long id) {
+		greetingRepository.deleteById(id);
+	}
+
 	
 	
 }

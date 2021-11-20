@@ -13,4 +13,6 @@ public interface IGreetingService {
 
 	List<Greeting> getAllGreeting();
 
+	void deleteGreetingById(long id);
+
 }
