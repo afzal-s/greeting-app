@@ -49,4 +49,8 @@ public class GreetingContoller {
 		return greetingService.getGreetingById(id);
 	}
 	
+	@GetMapping(value = "/getAllGreeting")
+	public List<Greeting> getGreetingAllById() {
+		return greetingService.getAllGreeting();
+	}
 }
